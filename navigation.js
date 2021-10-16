@@ -7,6 +7,7 @@ import NewPostScreen from "./screens/NewPostScreen";
 import StoryScreen from "./screens/StoryScreen";
 import LoginScreen from "./screens/LoginScreen";
 import SignUpScreen from "./screens/SignUpScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const Stack = createStackNavigator();
 const headerOptions = {
@@ -32,6 +33,11 @@ export const SignedInStack = () => {
         <Stack.Screen
           name="StoryScreen"
           component={StoryScreen}
+          options={{ headerShown: true }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
           options={{ headerShown: true }}
         ></Stack.Screen>
       </Stack.Navigator>

@@ -34,10 +34,15 @@ export const bottomTabIcons = [
   },
 ];
 
-const BottomTabs = ({ icons }) => {
+const BottomTabs = ({ icons, navigation }) => {
   const [activeTab, setActiveTab] = useState("Home");
   const Icon = ({ icon }) => (
-    <TouchableOpacity onPress={() => setActiveTab(icon.name)}>
+    <TouchableOpacity
+      onPress={() => {
+        setActiveTab(icon.name);
+        navigation.push("ProfileScreen");
+      }}
+    >
       <Image
         source={{ uri: activeTab === icon.name ? icon.active : icon.inactive }}
         style={styles.icon}
